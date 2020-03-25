@@ -6,4 +6,17 @@
     Email: <%= @user.email %><br>
     Member since: <%= @user.created_at %><br>
   </div>
+  <br>
+  <% if @user.created_events.any? %>
+    <h3 class="">My events: (<%= @user.created_events.count %>)</h3>
+    <% @user.created_events.each do |event| %>
+      <div class="">
+        <div class=""><%= event.name %></div>
+        <div class=""><%= event.description %></div>
+        <div class=""><%= event.place %></div>
+        <div class=""><%= event.date %></div>
+      </div >
+      <hr>
+    <% end %>
+  <% end %>
 </section>
