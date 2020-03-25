@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       login @user
       redirect_to @user
     else
-      flash.now[:danger] = "User doesn't exist"
+      flash[:error] = "User doesn't exist"
+      redirect_to login_path
     end
   end
 
