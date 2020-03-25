@@ -1,8 +1,9 @@
 module SessionsHelper
-  def login user
+  def login(user)
     session[:current_user_id] = user.id
   end
-  def logout user
+
+  def logout(_user)
     session[:current_user_id] = nil
   end
 

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @user = User.find_by(email: params[:email])
+    if (@user = User.find_by(email: params[:email]))
       login @user
       redirect_to @user
     else
@@ -14,5 +14,4 @@ class SessionsController < ApplicationController
     logout current_user if logged_in?
     redirect_to login_path
   end
-
 end
