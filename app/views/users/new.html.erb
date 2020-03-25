@@ -1,8 +1,17 @@
 
-<%= form_with model: User.new do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.submit 'Create User' %>
-<% end %>
+<section class="container">
+  <h2 class="col-sm-6 m-auto py-3">Enter signup information: </h2>
+  <div class= "col-sm-6 m-auto ">
+    <%= form_with model: User.new do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, class:'form-control' %>
+      </div>
+      <%= f.submit 'Create User' %>
+    <% end %>
+  </div>
+</section>

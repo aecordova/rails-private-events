@@ -1,5 +1,9 @@
 
-<h2>User Information:</h2>
-
-<%= @user.name %><br>
-<%= @user.email %>
+<section class="container">
+  <h2 class="col-sm-6 m-auto py-3">My Information: </h2>
+  <div class= "col-sm-6 m-auto ">
+    Name: <%= @user.name %> <br>
+    Email: <%= @user.email %><br>
+    Member since: <%= @user.created_at %><br>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<header>
+  <nav class="navbar navbar-dark bg-dark justify_content_between">
+    <%= link_to 'Private Events App', "#", class: 'navbar-brand pl-3' %>
+    <div class="navbar navbar-dark">
+      <% if logged_in? %>
+        <% provide(:title, ': ' + current_user.name) %>
+        <div class="text-light">Logged in as: <%= current_user.name %></div>
+        <%= link_to 'Profile', current_user, class:'nav-item nav-link' %>
+        <%= link_to 'Log Out', logout_path, class:'nav-item nav-link' %>
+      <% else %>      
+        <%= link_to 'Sign Up', signup_path, class:'nav-item nav-link' %>
+        <%= link_to 'Log in', login_path, class:'nav-item nav-link' %>
+      <% end %>
+    </div>
+  </nav>
+</header>
