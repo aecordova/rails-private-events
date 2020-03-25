@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= render 'shared/bootstrap_head' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
+    <%= render 'shared/js_for_bootstrap' %>
   </body>
 </html>
