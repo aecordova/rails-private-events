@@ -1,14 +1,19 @@
 <% provide(:title, @user.name) %>
-<section class="container p-0 row">
+<section class="events container p-0 row">
   <div class= "col-sm-4">
     <h2 class="py-3">My Information: </h2>
     Name: <%= @user.name %> <br>
     Email: <%= @user.email %><br>
     Member since: <%= @user.created_at %><br>
   </div>
-  <div class="col-sm-8">
+  <div class="px-0 col-sm-8">
     <% if @user.created_events.any? %>
       <%= render 'events/events', events: @user.created_events, section_h: 'Created Events' %>
+    <% end %>
+  </div> 
+  <div class="col-sm-8">
+    <% if @user.attending_events.any? %>
+      <%= render 'events/events', events: @user.attending_events, section_h: 'Attending Events' %>
     <% end %>
   </div> 
 </section>

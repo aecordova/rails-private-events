@@ -9,3 +9,13 @@ header {
     }
   }
 }
+
+.card-title{
+  height: 2.5em;
+  overflow:hidden;
+}
+p.card-text{
+  height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
