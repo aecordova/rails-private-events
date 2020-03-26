@@ -1,0 +1,16 @@
+      <h3 class="text-center bg-secondary text-light p-2">
+        <%= section_h %>
+        <small class="rounded-pill ml-3 py-1 px-3 bg-dark">
+          <%= events.count %>
+        </small>
+      </h3>
+      <% events.each do |event| %>
+        <div class="card col-4">
+          <div class="card-body px-0">
+            <h5 class="card-title"><%= event.name %></h5>
+            <small class="card-subtitle mb-2 text-muted"><%= event.date %> at: <%= event.place %></small>
+            <p class="card-text"><%= event.description %></p>
+            <%= link_to 'See Event', event, class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>
