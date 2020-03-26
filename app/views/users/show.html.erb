@@ -6,10 +6,9 @@
     Email: <%= @user.email %><br>
     Member since: <%= @user.created_at %><br>
   </div>
-  <div class="col-sm-8 mt-1">
+  <div class="col-sm-8">
     <% if @user.created_events.any? %>
       <%= render 'events/events', events: @user.created_events, section_h: 'Created Events' %>
     <% end %>
   </div> 
-
 </section>
