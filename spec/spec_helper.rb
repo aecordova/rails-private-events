@@ -46,6 +46,14 @@ RSpec.configure do |config|
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
+config.filter_run_when_matching :focus
+config.example_status_persistence_file_path = "spec/examples.txt"
+config.disable_monkey_patching!
+config.order = :random
+if config.files_to_run.one?
+  config.default_formatter = "doc"
+end
+Kernel.srand config.seed
 =begin
   # This allows you to limit a spec run to individual examples or groups
   # you care about by tagging them with `:focus` metadata. When nothing
