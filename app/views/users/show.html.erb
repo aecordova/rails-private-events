@@ -16,12 +16,12 @@
   <div class= "col-8">
     <div class="px-0">
       <% if @user.created_events.any? %>
-        <%= render 'events/events', events: @user.created_events, section_h: 'Created Events' %>
+        <%= render 'events/event_section', events: @user.created_events, section_h: 'Created Events' %>
       <% end %>
     </div> 
     <div class="px-0">
       <% if @user.attending_events.any? %>
-        <%= render 'events/events', events: @user.attending_events, section_h: 'Attending Events' %>
+        <%= render 'events/event_section', events: @user.attending_events, section_h: 'Attending Events' %>
       <% end %>
     </div>
   </div>
