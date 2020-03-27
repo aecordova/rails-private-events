@@ -1,0 +1,44 @@
+</section>
+<section class="container p-0 row">
+  <aside class= "col-sm-4 px-0">
+    <div class= "card mt-1">
+      <h3 class="card-header text-center">
+        <%= @event.name %>
+      </h3>
+      <h5 class="card-title text-center pt-3">
+        <%= @event.place %>,
+        <%= @event.date %>
+      </h5>
+      <small class="text-center card-subtitle mb-2 text-muted"> 
+        <%= @event.description%>
+      </small>
+      <div class="card-footer text-center">
+        Organizer: <%= @event.organizer.name %>
+      </div>
+    </div>
+  </aside>
+  <div class= "col-8 mt-1">
+    <div class="px-0">
+      <% if @event.attendees.any? %>
+        <h3 class= "card-header text-center bg-secondary text-light">Attendees</h3>
+        <table class = "table table-striped">
+          <thead>
+            <tr>
+              <th scope = "col">#</th>
+              <th scope = "col">Name</th>
+              <th scope = "col">Email</th>
+            </tr>
+          </thead>
+          <% @event.attendees.each_with_index do |att, i|  %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= att.name %></td>
+              <td><%= att.email %></td>
+              <td><%= att.id %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+    </div> 
+  </div>
+</section>

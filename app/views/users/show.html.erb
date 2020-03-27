@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+<section class="events container p-0 row">
+  <aside class= "col-sm-4 px-0">
+    <div class= "card mt-1">
+      <h3 class="card-header text-center">
+        <%= @user.name %>
+      </h3>
+      <h5 class="card-title text-center pt-3">
+        <%= @user.email %>
+      </h5>
+      <small class="text-center card-subtitle mb-2 text-muted"> 
+        Member since: <%= time_ago_in_words(@user.created_at)%> ago.
+      </small>
+    </div>
+  </aside>
+  <div class= "col-8">
+    <div class="px-0">
+      <% if @user.created_events.any? %>
+        <%= render 'events/event_section', events: @user.created_events, section_h: 'Created Events' %>
+      <% end %>
+    </div> 
+    <div class="px-0">
+      <% if @user.attending_events.any? %>
+        <%= render 'events/event_section', events: @user.attending_events, section_h: 'Attending Events' %>
+      <% end %>
+    </div>
+  </div>
+</section>

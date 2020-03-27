@@ -1,0 +1,16 @@
+<h5 class="card-header text-center col-12"><%= subtitle %></h5>
+<% event_group.each do |e| %>
+  <div class="card col-4 my-1 px-0">
+    <div class="card-body">
+      <h5 class="card-title text-center"><%= e.name %></h5>
+      <small class="card-subtitle mb-2 text-muted d-flex justify-content-between">
+        <span><%= e.date %></span>
+        <span> At: <%= e.place %></span>
+      </small>
+      <p class="card-text"><%= e.description %></p>
+      <div class = "my-1 rounded-pill bg-secondary text-center"><%= link_to 'See Event', e, class: ' text-light card-link' %></div>
+      <div class = "rounded-pill bg-secondary text-center"><%= link_to 'Register', event_attendances_path(id: e.id), method:'post', class: 'text-light card-link' %></div>
+    </div>
+  </div>
+<% end %>
+

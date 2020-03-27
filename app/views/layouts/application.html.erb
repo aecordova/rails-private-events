@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsPrivateEvents</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'layouts/head' %>
 
-  <body>
-    <%= yield %>
+  <body class="bg-light">
+    <%= render 'layouts/header' %>
+    <%= render partial:'shared/error_messages', flash: flash %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'shared/js_for_bootstrap' %>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-dark bg-dark justify_content_between">
+    <div class="container row mx-auto">
+      <%= link_to 'Private Events App', root_path , class: 'navbar-brand pl-3' %>
+      <div class="navbar navbar-dark">
+        <% if logged_in? %>
+          <small class="text-light mx-3">
+            Logged in as: <%= link_to current_user.name, current_user, class:'font-weight-bold'%>
+          </small>
+          <%= link_to 'New Event', new_event_path, class:'nav-item nav-link' %>
+          <%= link_to 'All Events', events_path, class:'nav-item nav-link' %>
+          <%= link_to 'Log Out', logout_path, class:'nav-item nav-link' %>
+        <% else %>      
+          <%= link_to 'Sign Up', signup_path, class:'nav-item nav-link' %>
+          <%= link_to 'Log in', login_path, class:'nav-item nav-link' %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</header>

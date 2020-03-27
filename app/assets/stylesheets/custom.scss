@@ -1,0 +1,27 @@
+header {
+  nav {
+    a {
+      color: lightgray;
+    }
+    a:hover {
+      color: gray;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.card-title{
+  height: 2.5em;
+  overflow:hidden;
+}
+p.card-text{
+  height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field_with_errors {
+  input, textarea {
+    border: solid 1px red;
+  }
+}
