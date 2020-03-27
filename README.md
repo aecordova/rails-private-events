@@ -23,8 +23,9 @@ The full projects requirements and information can be found in [The Odin Project
 
 
 <h3 align="center">Data Model Representation</h3>
-
-![DBModel](db_model.png)
+<p align="center">
+  <img src="db_model.png" style="center">
+</p>
 
 
 ### ⭐️ Built with
