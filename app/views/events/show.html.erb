@@ -10,14 +10,17 @@
         <%= @event.date %>
       </h5>
       <small class="text-center card-subtitle mb-2 text-muted"> 
-        <%= @event.description%> ago.
+        <%= @event.description%>
       </small>
+      <div class="card-footer text-center">
+        Organizer: <%= @event.organizer.name %>
+      </div>
     </div>
   </aside>
   <div class= "col-8 mt-1">
     <div class="px-0">
       <% if @event.attendees.any? %>
-        <h3 class= "card-header text-center">Attendees</h3>
+        <h3 class= "card-header text-center bg-secondary text-light">Attendees</h3>
         <table class = "table table-striped">
           <thead>
             <tr>
@@ -31,6 +34,7 @@
               <td><%= i+1 %></td>
               <td><%= att.name %></td>
               <td><%= att.email %></td>
+              <td><%= att.id %></td>
             </tr>
           <% end %>
         </table>
