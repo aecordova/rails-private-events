@@ -5,9 +5,9 @@ class Event < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }
   validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
   validates :date, presence: true
-  validates :place, presence: true , lenght: { maximum: 150 }
+  validates :place, presence: true, length: { maximum: 150 }
   validates :organizer_id, presence: true
 
-  scope :future, -> {where("date >= ?", DateTime.now )}
-  scope :past, -> {where("date < ?", DateTime.now )}
+  scope :future, -> { where('date >= ?', DateTime.now) }
+  scope :past, -> { where('date < ?', DateTime.now) }
 end

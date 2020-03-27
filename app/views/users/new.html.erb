@@ -2,7 +2,16 @@
 <section class="container">
   <h2 class="col-sm-6 m-auto py-3">Enter signup information: </h2>
   <div class= "col-sm-6 m-auto ">
-    <%= form_with model: User.new do |f| %>
+    <%= form_with model: @user, url: signup_path, local:true do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+        <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li class="text-danger"><%= message %></li>
+            <% end %>
+        </ul>
+        </div>
+      <% end %>
       <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class:'form-control' %>
