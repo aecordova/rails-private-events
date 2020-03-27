@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   root 'sessions#index'
   resources :events
 
+  resources :event_attendances, only: [:create]
+
 end
 
