@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject {
-    described_class.new(name: "example", email: 'example@mail.com')
-  }
+  subject do
+    described_class.new(name: 'example', email: 'example@mail.com')
+  end
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
@@ -36,5 +36,16 @@ RSpec.describe User, type: :model do
     subject.save
     user = User.new(name: 'Other', email: 'example@mail.com')
     expect(user).to_not be_valid
+  end
+
+  describe 'Associations' do
+    it { should have_many(:created_events) }
+    it { should have_many(:event_attendances) }
+    it { should have_many(:attending_events) }
+  end
+
+  describe 'Validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:email) }
   end
 end
