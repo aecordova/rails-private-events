@@ -14,23 +14,21 @@
       </small>
     </div>
   </aside>
-  <div class= "col-8">
+  <div class= "col-8 mt-1">
     <div class="px-0">
       <% if @event.attendees.any? %>
-        <h3 class= "card-header text-center">
-        <table class = "table table-stripped">
+        <h3 class= "card-header text-center">Attendees</h3>
+        <table class = "table table-striped">
           <thead>
             <tr>
               <th scope = "col">#</th>
-              <th scope = "col">ID</th>
               <th scope = "col">Name</th>
               <th scope = "col">Email</th>
             </tr>
           </thead>
           <% @event.attendees.each_with_index do |att, i|  %>
             <tr>
-              <td><%= i %></td>
-              <td><%= att.id %></td>
+              <td><%= i+1 %></td>
               <td><%= att.name %></td>
               <td><%= att.email %></td>
             </tr>
