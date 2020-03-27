@@ -20,6 +20,8 @@ p.card-text{
   text-overflow: ellipsis;
 }
 
-.field_with_errors input {
-  border: solid 1px red;
+.field_with_errors {
+  input, textarea {
+    border: solid 1px red;
+  }
 }

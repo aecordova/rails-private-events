@@ -4,7 +4,7 @@
     <%= form_with url: sessions_path do |f| %>
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.text_field :email, class:'form-control' %>
+        <%= f.text_field :email, class:'form-control', required: true %>
       </div>
       <%= f.submit 'Log In' %>
     <% end %>
