@@ -1,15 +1,18 @@
 class EventAttendancesController < ApplicationController
   def create
-    @attendance = current_user.event_attendances.build(event_id: params[:id])
-    puts 'event_id: ' + params[:id]
-    puts 'Attendance valid?: ' + @attendance.valid?.to_s
-    puts 'Errors: ' + @attendance.errors.full_messages.to_s
-    if @attendance.save
-      flash[:success] = 'Successfully registered to event'
-      redirect_to event_path(id: @attendance.event_id)
+    id = params[:id]
+    if current_user_attending?(id)
+      flash.now[:notice] = "You have already registered to that event"
+      redirect_back fallback_location: events_url
     else
-      flash[:error] = 'Unable to save the event'
-      redirect_to events_path
+      @attendance = current_user.event_attendances.build(event_id: id)
+      if @attendance.save
+        flash[:success] = 'Successfully registered to event'
+        redirect_to event_path(id: id)
+      else
+        flash[:error] = 'Unable to register you to the event'
+        redirect_back fallback_location: events_url
+      end
     end
   end
 end
