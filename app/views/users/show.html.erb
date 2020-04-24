@@ -1,5 +1,5 @@
 <% provide(:title, @user.name) %>
-<section class="events container p-0 row">
+<section class="events container px-0 mx-0 row">
   <aside class= "col-sm-4 px-0">
     <div class= "card mt-1">
       <h3 class="card-header text-center">
@@ -13,7 +13,7 @@
       </small>
     </div>
   </aside>
-  <div class= "col-8">
+  <div class= "col-8 pr-0">
     <div class="px-0">
       <% if @user.created_events.any? %>
         <%= render 'events/event_section', events: @user.created_events, section_h: 'Created Events' %>

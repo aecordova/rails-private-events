@@ -3,10 +3,10 @@
 
   <%= render 'layouts/head' %>
 
-  <body class="bg-light">
+  <body>
     <%= render 'layouts/header' %>
     <%= render partial:'shared/error_messages', flash: flash %>
-    <div class="container">
+    <div class="container px-0">
       <%= yield %>
     </div>
     <%= render 'shared/js_for_bootstrap' %>
